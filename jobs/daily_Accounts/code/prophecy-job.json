@@ -1,0 +1,89 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "11473",
+    "jobId" : "jobs/daily_Accounts",
+    "name" : "daily_Accounts",
+    "schedule" : "0 0 0 * * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "akash91162@gmail.com",
+      "onStart" : true,
+      "onSuccess" : true,
+      "onFailure" : true
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "11473",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "ArPyetK5UhKYmlPvsVyVY" : {
+      "id" : "ArPyetK5UhKYmlPvsVyVY",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "enrich_accounts",
+        "slug" : "enrich_accounts",
+        "x" : 100,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "in",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "out",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/enrich_accounts",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "rainforest_biz_project" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ ]
+}
